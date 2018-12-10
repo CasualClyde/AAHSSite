@@ -20,11 +20,95 @@
     <link href="css/agency.min.css" rel="stylesheet">
 
     <style>
-    	header.masthead {
-    		background-image:url(images/about-img.jpg);
-    	}
+    	.img-fluid {
+      height:100%;
+    }
 
-	</style>
+	.dropdown {
+		cursor:pointer;
+	}
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+      font-weight: bold!important;
+      color: maroon!important;
+
+    }
+
+    #mainNav .navbar-brand {
+      color: brown;
+    }
+
+    .btn .btn-primary .btn-xl .text-uppercase .js-scroll-trigger {
+      
+    }
+
+    .btn-primary {
+      background-color: maroon;
+      border-color: maroon;
+    }
+
+    .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+      background-color: burlywood!important;
+      border-color:burlywood!important;
+      font-color:brown!important;
+    }
+
+    .btn-text-uppercase:hover {
+      color:white;
+    }
+
+    #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+      color:burlywood;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+      color:burlywood;
+    }
+
+    /* Dropdown Button */
+
+
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #2980B9;
+    }
+
+    .dropbtn {
+      font-weight: bold!important;
+      color: maroon!important;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      float:right;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      font-weight: bold!important;
+      color: maroon!important;
+      text-decoration: none;
+      display: block;
+    }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+	#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+		background: maroon;
+	}
+
+    </style>
 
   </head>
 
@@ -47,13 +131,24 @@
               <a class="nav-link js-scroll-trigger" href="index.html">home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="about.html">curriculum</a> 
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="enroll.html">enroll</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="about.html">curriculum</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="resources.html">resources</a>
+              <div class="dropdown">
+                <a id="dropbtn" onclick="myFunction()" class="nav-link js-scroll-trigger">Resources 
+                  <i class="fa fa-caret-down"></i>
+                </a>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="students.html">Students</a>
+                  <a href="parents.html">Parents</a>
+                  <a href="staff.html">Staff</a>
+                  <a href="board.html">Board</a>
+                  <a href="info.html">More Info</a>
+                </div>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="contact.html">contact</a>
@@ -69,7 +164,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Curriculum</h2>
+            <h2 class="section-heading text-uppercase">Curriculum</h2><br><br>
             
           </div>
         </div>
@@ -161,6 +256,69 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Your Website 2018</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+     <script>
+          /* When the user clicks on the button, 
+          toggle between hiding and showing the dropdown content */
+          function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+          }
+
+          // Close the dropdown if the user clicks outside of it
+          window.onclick = function(event) {
+            if (!event.target.matches('#dropbtn')) {
+
+              var dropdowns = document.getElementsByClassName("dropdown-content");
+              var i;
+              for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                  openDropdown.classList.remove('show');
+                }
+              }
+            }
+          }
+    </script>
 
 <!-- Portfolio Modals -->
 
